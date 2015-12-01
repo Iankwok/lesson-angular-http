@@ -16,6 +16,8 @@
       <ul id="presidents">
         <li ng-repeat="president in all">
           <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
+          <button ng-click="showPresident(president)">Edit President</button>
+          <button ng-click="deletePresident(president)">Kill President</button>
         </li>
       </ul>
 
@@ -39,6 +41,15 @@
           <input type="submit">
         </div>
       </form>
+
+      <div>
+        <form ng-submit="updatePresident()">
+          <h1>{{editPresident.name}}</h1>
+          <input type='text' ng-model='editPresident.start'>
+          <input type='text' ng-model='editPresident.end'>
+          <button type="submit">Update</button>
+        </form>
+      </div>
 
     </section>
 
